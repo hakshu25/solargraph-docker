@@ -1,4 +1,7 @@
-FROM ruby:2.6.4-alpine3.10
+ARG RUBY_VERSION="2.6.4"
+ARG ALPINE_VERSION="3.10"
+
+FROM ruby:$RUBY_VERSION-alpine$ALPINE_VERSION
 
 ENV APP_ROOT /usr/src/app
 
