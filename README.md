@@ -22,13 +22,13 @@ $ docker build -t vscode-solargraph:latest .
 $ docker run -d --rm -p 8091:7658 --name solargraph vscode-solargraph
 ```
 
-If you want to specify the ruby ​​version, let's specify it with arg as follows
+If you want to specify the ruby version, let's specify it with arg as follows
 
 ```bash
 $ docker run -d --rm -p 8091:7658 --name solargraph --build-arg RUBY_VERSION="x.x.x" vscode-solargraph
 ```
 
-If you want to specify the alpine ​​version, let's specify it with arg as follows
+If you want to specify the alpine version, let's specify it with arg as follows
 
 ```
 $ docker run -d --rm -p 8091:7658 --name solargraph --build-arg ALPINE_VERSION="x.x" vscode-solargraph
@@ -40,8 +40,8 @@ $ docker run -d --rm -p 8091:7658 --name solargraph --build-arg ALPINE_VERSION="
 - Add the following to settings.json
 
 ```json
-"socket.transport": "external",
-"socket.externalServer": {
+"solargraph.transport": "external",
+"solargraph.externalServer": {
     "host": "localhost",
     "port": 8091
 }
