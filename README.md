@@ -16,22 +16,22 @@ $ cp YOUR_PROJECT_FOLDER/Gemfile YOUR_PROJECT_FOLDER/Gemfile.lock .
 $ docker build -t vscode-solargraph:latest .
 ```
 
-2. Start docker container
-
-```bash
-$ docker run -d --rm -p 8091:7658 --name solargraph vscode-solargraph
-```
-
 If you want to specify the ruby version, let's specify it with arg as follows
 
 ```bash
-$ docker run -d --rm -p 8091:7658 --name solargraph --build-arg RUBY_VERSION="x.x.x" vscode-solargraph
+$ docker build -t vscode-solargraph:latest --build-arg RUBY_VERSION="x.x.x" .
 ```
 
 If you want to specify the alpine version, let's specify it with arg as follows
 
 ```
-$ docker run -d --rm -p 8091:7658 --name solargraph --build-arg ALPINE_VERSION="x.x" vscode-solargraph
+$ docker build -t vscode-solargraph:latest --build-arg ALPINE_VERSION="x.x" .
+```
+
+2. Start docker container
+
+```bash
+$ docker run -d --rm -p 8091:7658 --name solargraph vscode-solargraph
 ```
 
 3. Setup Visual Studio
