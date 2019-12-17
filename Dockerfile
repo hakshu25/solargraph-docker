@@ -10,13 +10,16 @@ RUN apk update \
 
 # Install gems
 WORKDIR $APP_ROOT
-COPY Gemfile Gemfile.lock ./
+COPY Gemfile Gemfile.lock rails.rb ./
 RUN gem install bundler
 RUN bundle install --jobs=4
 RUN gem install solargraph yard
 
 # Install gem documentation
 RUN yard gems
+
+# Install rails documentation
+RUN solargraph bundle
 
 # Solargraph server port
 EXPOSE 7658
