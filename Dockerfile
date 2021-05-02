@@ -1,12 +1,12 @@
-ARG RUBY_VERSION="2.6.4"
-ARG ALPINE_VERSION="3.10"
+ARG RUBY_VERSION="2.7.3"
 
-FROM ruby:$RUBY_VERSION-alpine$ALPINE_VERSION
+FROM ruby:$RUBY_VERSION-slim
 
 ENV APP_ROOT /usr/src/app
 
-RUN apk update \
-    && apk add --update make gcc g++
+RUN apt update \
+  && apt install -y build-essential libsqlite3-dev \
+  default-libmysqlclient-dev libpq-dev
 
 # Install gems
 WORKDIR $APP_ROOT

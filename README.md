@@ -22,19 +22,13 @@ If you want to specify the ruby version, let's specify it with arg as follows
 $ docker build -t vscode-solargraph:latest --build-arg RUBY_VERSION="x.x.x" .
 ```
 
-If you want to specify the alpine version, let's specify it with arg as follows
-
-```
-$ docker build -t vscode-solargraph:latest --build-arg ALPINE_VERSION="x.x" .
-```
-
 2. Start docker container
 
 ```bash
 $ docker run -d --rm -p 8091:7658 --name solargraph vscode-solargraph
 ```
 
-3. Setup Visual Studio
+3. Setup Visual Studio Code
 
 - Install [VSCode Solargraph Extension](https://marketplace.visualstudio.com/items?itemName=castwide.solargraph)
 - Add the following to settings.json
