@@ -5,7 +5,8 @@ FROM ruby:$RUBY_VERSION-slim
 ENV APP_ROOT /usr/src/app
 
 RUN apt update \
-  && apt install -y build-essential libsqlite3-dev
+  && apt install -y build-essential libsqlite3-dev \
+  default-libmysqlclient-dev libpq-dev
 
 # Install gems
 WORKDIR $APP_ROOT
